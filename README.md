@@ -14,4 +14,7 @@ Since long, I was looking for something that can help listing URLs. Something li
 - cd urlpad
 - rake db:setup
 - bundle exec puma
-- navigate to http://localhost:9292
+- navigate to `http://localhost:9292`
+
+### Server:
+- `http://urlpad.herokuapp.com/`
