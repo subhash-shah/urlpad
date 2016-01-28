@@ -1,0 +1,17 @@
+<h2>Links</h2>
+<%= render partial: "shared/errors", locals: {object: @link} %>
+<table border="1">
+  <tr>
+    <th>URL</th>
+    <th colspan="2">Actions</th>
+  </tr>
+  <% @links.each do |link| %>
+    <tr>
+      <td><a href="<%= link.url %>" target="_blank"><%= link.url %></a></td>
+      <td><%= link_to "Edit", edit_link_path(link) %></td>
+      <td><%= link_to "Delete", link_path(link), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to "Add New Link", new_link_path %>
