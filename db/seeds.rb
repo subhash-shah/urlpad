@@ -5,5 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = FactoryGirl.create(:user)
+admin = User.new
+admin.email = "admin@urlpad.com"
+admin.password = "India@123!"
+admin.password_confirmation = "India@123!"
+admin.save!
 Link.where(user_id: nil).update_all(user_id: admin.id)
