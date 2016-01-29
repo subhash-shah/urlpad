@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = User.new
+admin = User.find_or_create_by(email: "admin@urlpad.com")
 admin.email = "admin@urlpad.com"
 admin.password = "India@123!"
 admin.password_confirmation = "India@123!"
