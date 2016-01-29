@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+admin = FactoryGirl.create(:user)
+Link.where(user_id: nil).update_all(user_id: admin.id)
