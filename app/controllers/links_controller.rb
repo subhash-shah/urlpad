@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :authenticate_user!
+  before_action :load_all_tags, only: [:new, :edit]
 
   def index
     @links = Link.all
@@ -42,9 +42,15 @@ class LinksController < ApplicationController
     redirect_to links_path
   end
 
+  def search_links_by_tag
+    tag_name = params[:q]
+    @links = Link.by_tag(tag_name)
+    render "search_results"
+  end
+
   private
 
   def link_params
-    params.require(:link).permit(:url)
+    params.require(:link).permit(:url, tag_ids: [])
   end
 end
