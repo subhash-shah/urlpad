@@ -10,12 +10,14 @@ class LinksController < ApplicationController
   end
 
   def create
+    binding.pry
     @link = current_user.links.new(link_params)
     if @link.save
       flash[:success] = "Link saved successfully."
       redirect_to links_path
     else
       flash[:notice] = @link.errors.full_messages.join("; ")
+      load_all_tags
       render :new
     end
   end
@@ -31,6 +33,7 @@ class LinksController < ApplicationController
       redirect_to links_path
     else
       flash[:notice] = @link.errors.full_messages.join("; ")
+      load_all_tags
       render :edit
     end
   end
@@ -51,6 +54,6 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:url, tag_ids: [])
+    params.require(:link).permit(:title, :description, :url, :user_id, tag_ids: [])
   end
 end

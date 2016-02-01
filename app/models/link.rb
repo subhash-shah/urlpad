@@ -1,7 +1,7 @@
 class Link < ActiveRecord::Base
 
   # Validations
-  validates :url, presence: true
+  validates :title, :url, presence: true
 
   # Associations
   belongs_to :user
