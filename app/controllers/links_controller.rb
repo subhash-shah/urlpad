@@ -10,7 +10,6 @@ class LinksController < ApplicationController
   end
 
   def create
-    binding.pry
     @link = current_user.links.new(link_params)
     if @link.save
       flash[:success] = "Link saved successfully."
@@ -27,7 +26,7 @@ class LinksController < ApplicationController
   end
 
   def update
-    @link = Link.find_by(link_params[:id])
+    @link = Link.find_by(id: params[:id])
     if @link.update_attributes(link_params)
       flash[:success] = "Link updated successfully."
       redirect_to links_path
