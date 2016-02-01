@@ -1,0 +1,19 @@
+<h2>Link Details</h2>
+<table>
+  <tr>
+    <td>Title</td>
+    <td><%= @link.title %></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><%= @link.description %></td>
+  </tr>
+  <tr>
+    <td>URL</td>
+    <td><%= @link.url %></td>
+  </tr>
+  <tr>
+    <td>Created By</td>
+    <td><%= link_author_name(@link) %></td>
+  </tr>
+</table>

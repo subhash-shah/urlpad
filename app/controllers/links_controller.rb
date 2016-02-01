@@ -38,6 +38,10 @@ class LinksController < ApplicationController
     end
   end
 
+  def show
+    @link = Link.find_by(id: params[:id])
+  end
+
   def destroy
     link = Link.find_by(id: params[:id])
     link.destroy

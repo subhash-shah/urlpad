@@ -2,11 +2,12 @@
 <table border="1">
   <tr>
     <th>URL</th>
-    <th colspan="2">Actions</th>
+    <th colspan="3">Actions</th>
   </tr>
   <% @links.each do |link| %>
     <tr>
       <td><a href="<%= link.url %>" target="_blank"><%= link.url %></a></td>
+      <td><%= link_to "View", link_path(link) %></td>
       <td><%= link_to "Edit", edit_link_path(link) %></td>
       <td><%= link_to "Delete", link_path(link), method: :delete %></td>
     </tr>
