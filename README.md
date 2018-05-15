@@ -10,7 +10,7 @@ Since long, I was looking for something that can help listing URLs. Something li
 
 
 ### Setup:
-- git clone `git@github.com:SubhashShah-BTC/urlpad.git`
+- git clone `git@github.com:subhash-shah/urlpad.git`
 - cd urlpad
 - rake db:setup
 - bundle exec puma
